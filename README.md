@@ -23,7 +23,8 @@ Sois le plus rapide des clickers du game ⚡
 
 #### 3. Commandes Git
 
-- `git status` : voir où en sont nos fichiers non sauvegardés
+- `git status` : Montre les fichiers qui ont été modifiés mais pas encore sauvegardés.
+- `git diff` ou `git diff mon_fichier` : Affiche les changements faits par rapport à la dernière sauvegarde, pour tous les fichiers ou un fichier spécifique.
 - `git log` : voir les commits réalisés
 - `git add mon_fichier` : ajouter des fichiers à sauvegarder
 - `git commit -m "J'ai fait telle chose` : nommer une nouvelle sauvegarde
