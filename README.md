@@ -33,8 +33,10 @@ Lancez `index.html` et voilà !
 
 ### Comment le projet a été créé ?
 
-1. Aller ou on veut pour créer un projet dans un endroit rangé
-   ex:
+#### 1. Initialisation du projet
+
+Aller ou on veut pour créer un projet dans un endroit rangé
+ex:
 
 ```bash
   cd Desktop
@@ -43,3 +45,25 @@ Lancez `index.html` et voilà !
 
   ls # on voit qu'on a un dossier ClickFast qui a été créé
 ```
+
+Aller dans le dossier pour faire un `git init`.  
+Lier le repository créé en ligne à ce projet.
+
+### 2. Création des fichiers
+
+Créer un fichier `index.html`, `style.css`, `script.js`. Ils vont chacun avoir leur propre rôle :
+
+- `index.html` : le contenu du site : titre, bouton, score
+- `style.css` : le styling
+- `script.js` : la détection de clic sur un bouton, et l'affichage du nombre de clics dans l'élément de score
+
+### 3. Docker
+
+Conteneuriser le projet dans un Docker :
+
+- créer un Dockerfile
+- trouver comment faire pour envelopper le projet dans un dockerfile, et le lancer depuis docker. Simple recherche internet, ex: `html css docker`. On se rend compte que la plupart des personnes recommandent nginx qui est super simple et adapté au lancement de sites statiques.
+  Réponse appliquée depuis [ici](https://thriveread.com/run-html-with-docker-and-nginx/).
+- maintenant, faire une commande comme `docker run -d -p 8080:80 clickfast` devrait faire l'affaire !
+
+### 4. CI/CD
