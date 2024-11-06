@@ -4,7 +4,7 @@ Sois le plus rapide des clickers du game ⚡
 
 ## Comment utiliser le projet ?
 
-...
+Lancez `index.html` et voilà !
 
 ## Tips
 
