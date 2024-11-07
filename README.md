@@ -62,8 +62,12 @@ Créer un fichier `index.html`, `style.css`, `script.js`. Ils vont chacun avoir 
 Conteneuriser le projet dans un Docker :
 
 - créer un Dockerfile
-- trouver comment faire pour envelopper le projet dans un dockerfile, et le lancer depuis docker. Simple recherche internet, ex: `html css docker`. On se rend compte que la plupart des personnes recommandent nginx qui est super simple et adapté au lancement de sites statiques.
-  Réponse appliquée depuis [ici](https://thriveread.com/run-html-with-docker-and-nginx/).
-- maintenant, faire une commande comme `docker run -d -p 8080:80 clickfast` devrait faire l'affaire !
+- trouver comment faire pour envelopper le projet dans un Dockerfile, et le lancer depuis docker. 
+  - Faire une simple recherche internet, ex: `html css docker`.  
+    On se rend compte que la plupart des personnes recommandent nginx qui est super simple et adapté au lancement de sites statiques.
+  - Solution : il y a toujours plein de solutions possibles.
+    Moi j'ai appliqué [cette réponse](https://thriveread.com/run-html-with-docker-and-nginx/). 
+    D'autres ressources d'internet sur comment faire ça facilement disent à peu près la même chose : [omkara18 de dev.to](https://dev.to/omkara18/deploying-a-static-website-with-docker-a-comprehensive-guide-3gk), [Zulfikar sur medium](https://medium.com/@zul.m/deploying-a-static-html-site-with-docker-and-nginx-6f5bcdcbc650)
+- maintenant, faire une commande comme `docker run -d -p 8080:80 clickfast` devrait lancer le projet conteneurisé !
 
 ### 4. CI/CD
