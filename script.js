@@ -1,8 +1,3 @@
-let count = 0;
-
-document
-  .getElementById("button-clicker")
-  .addEventListener("click", () => {
-    count++;
-    document.getElementById("counter").innerHTML = count;
-  });
+// Une fois que le HTML ressemble à ce que vous voulez : 
+// 1. Faire une variable count, qui stockera le nombre de clics
+// 2. Faire un eventListener sur le bouton
