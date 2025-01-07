@@ -2,41 +2,39 @@
 
 Sois le plus rapide des clickers du game ⚡
 
+## Sommaire
+
+- [Comment utiliser le projet ?](#comment-utiliser-le-projet-)
+- [Exercices](#exercices)
+  - [Exercice I - Faire fonctionner ClickFast (HTML CSS JS)](#exercice-i---faire-fonctionner-clickfast-html-css-js)
+    - [1. Initialisation du projet](#1-initialisation-du-projet)
+    - [2. Création des fichiers](#2-création-des-fichiers)
+    - [3. Fonctionnalités de base](#3-fonctionnalités-de-base)
+  - [Exercice II - Docker](#exercice-ii---docker)
+  - [Exercice III - CI/CD](#exercice-iii---cicd)
+  - [Exercice IV - Tests automatisés](#exercice-iv---tests-automatisés)
+  - [Exercice V - Connecter notre projet à une API](#exercice-v---connecter-notre-projet-à-une-api)
+- [Tips du Terminal](#tips-du-terminal)
+  - [1. Raccourcis](#1-raccourcis)
+  - [2. Commandes](#2-commandes)
+  - [3. Commandes Git](#3-commandes-git)
+
+---
+
 ## Comment utiliser le projet ?
 
 Lancez `index.html` et voilà !
 
-## Tips
+## Exercices
 
-### Terminal
-
-#### 1. Raccourcis
-
-- `tab` : appuyer sur tab pour compléter le mot qu'on est en train d'écrire
-
-#### 2. Commandes
-
-- `cd` : se déplacer vers un dossier : `cd MonDossier` ou `cd Mondossier/sous-dossier/sous-sous-dossier`
-  `cd .. = remonter dans dossier parent`
-- `ls` : lister les éléments dans le dossier où on se trouve
-- `git init` : créer un repository (ou dépot) git dans le dossier où on se trouve
-
-#### 3. Commandes Git
-
-- `git status` : Montre les fichiers qui ont été modifiés mais pas encore sauvegardés.
-- `git diff` ou `git diff mon_fichier` : Affiche les changements faits par rapport à la dernière sauvegarde, pour tous les fichiers ou un fichier spécifique.
-- `git log` : voir les commits réalisés
-- `git add mon_fichier` : ajouter des fichiers à sauvegarder
-- `git commit -m "J'ai fait telle chose` : nommer une nouvelle sauvegarde
-- `git push` : envoyer les sauvegardes vers GitHub
-- `git remote -v` : voir les connexions entre notre dossier local (dans l'ordi) et les éléments en ligne (connexion au repository GitHub, ou autres)
-
-### Comment le projet a été créé ?
+### Exercice I - Faire fonctionner ClickFast (HTML CSS JS)
 
 #### 1. Initialisation du projet
 
-Aller ou on veut pour créer un projet dans un endroit rangé
-ex:
+> Comment le projet a été créé ?
+
+1. Aller ou on veut pour créer un projet dans un endroit rangé.  
+   Ex:
 
 ```bash
   cd Desktop
@@ -46,10 +44,12 @@ ex:
   ls # on voit qu'on a un dossier ClickFast qui a été créé
 ```
 
-Aller dans le dossier pour faire un `git init`.  
-Lier le repository créé en ligne à ce projet.
+2. Aller dans le dossier qui vient d'être créé, pour faire un `git init`.
 
-### 2. Création des fichiers
+3. Créer un repository en ligne pour stocker le projet.  
+   Lier le repository créé en ligne à ce projet local.
+
+#### 2. Création des fichiers
 
 Créer un fichier `index.html`, `style.css`, `script.js`. Ils vont chacun avoir leur propre rôle :
 
@@ -57,26 +57,53 @@ Créer un fichier `index.html`, `style.css`, `script.js`. Ils vont chacun avoir 
 - `style.css` : le styling
 - `script.js` : la détection de clic sur un bouton, et l'affichage du nombre de clics dans l'élément de score
 
-### 3. Docker
+Copiez-collez le contenu de mes fichiers dans vos fichiers, pour avoir une base.
+
+#### 3. Fonctionnalités de base
+
+- Faire que qu'à chaque clic sur le bouton, le nombre affiché dans le site augmente.
+- Bonus : ajouter un petit chrono, qui permet de ne modifier le compteur que pendant le temps imparti (5 secondes).
+
+### Exercice II - Docker
 
 Conteneuriser le projet dans un Docker :
 
 - créer un Dockerfile
-- trouver comment faire pour envelopper le projet dans un Dockerfile, et le lancer depuis docker. 
+- trouver comment faire pour envelopper le projet dans un Dockerfile, et le lancer depuis docker.
   - Faire une simple recherche internet, ex: `html css docker`.  
     On se rend compte que la plupart des personnes recommandent nginx qui est super simple et adapté au lancement de sites statiques.
   - Solution : il y a toujours plein de solutions possibles.
-    Moi j'ai appliqué [cette réponse](https://thriveread.com/run-html-with-docker-and-nginx/). 
+    Moi j'ai appliqué [cette réponse](https://thriveread.com/run-html-with-docker-and-nginx/).
     D'autres ressources d'internet sur comment faire ça facilement disent à peu près la même chose : [omkara18 de dev.to](https://dev.to/omkara18/deploying-a-static-website-with-docker-a-comprehensive-guide-3gk), [Zulfikar sur medium](https://medium.com/@zul.m/deploying-a-static-html-site-with-docker-and-nginx-6f5bcdcbc650)
 - maintenant, faire une commande comme `docker run -d -p 8080:80 clickfast` devrait lancer le projet conteneurisé !
 
-### 4. CI/CD
+### Exercice III - CI/CD
 
+Implémentons le CI/CD !
 
-## Comment manipuler l'API
+- Mettre le projet en ligne (gratuitement grâce à github.io)
+- Configurer les Workflows
+
+### Exercice IV - Tests automatisés
+
+C'est bien beau notre CI/CD, mais c'est encore mieux lorsqu'il se charge tout seul de lancer nos tests 😎
+
+- Écrivons des Tests unitaires, pour vérifier que quand X se passe, Y résultat se produit
+- Inscrivons une règle pour que notre test soit bien lancé quand on veut push notre modification
+- Bonus : Tests d'intégration
+  Alors là on est des boss, on va faire du code qui vérifie que notre front fonctionne bien.  
+  En utilisant Playwright, on va vérifier que quand on clique sur [...], on a bien [... qui réagit].  
+  Maintenant, faire que notre CI CD lance bien ces tests également
+
+### Exercice V - Connecter notre projet à une API
+
+Maintenant qu'on a une bonne grosse base et qu'on a vu tous les concepts qu'on souhaitait voir, on va pouvoir s'amuser un peu plus : on va créer un système de scoreboard, permettant à tout le monde de soumettre son score et voir celui des autres.
+
+#### Comment manipuler l'API ?
+
+Comment envoyer mon score :
+
 ```javascript
-// ENVOYER MON SCORE
-
 const postData = async () => {
   const url = "https://672e1217229a881691eed80f.mockapi.io/scores";
 
@@ -110,9 +137,11 @@ const postData = async () => {
 };
 
 postData();
+```
 
-// LIRE LES SCORES
+Comment lire les scores :
 
+```javascript
 const getData = async () => {
   const url = "https://672e1217229a881691eed80f.mockapi.io/scores";
 
@@ -131,9 +160,11 @@ const getData = async () => {
 };
 
 getData();
+```
 
-// REMPLACER MON ANCIEN SCORE AVEC LE NOUVEAU
+Comment remplacer mon ancien score avec le nouveau :
 
+```javascript
 const usernameToDelete = "JohnDoe";
 
 const deleteUserByUsername = async (username) => {
@@ -199,3 +230,28 @@ const deleteUserByUsername = async (username) => {
 // Appel de la fonction pour supprimer et ajouter un utilisateur
 deleteUserByUsername(usernameToDelete);
 ```
+
+## Tips du Terminal
+
+> Voilà une anti-sèche pour mieux maîtriser le terminal
+
+### 1. Raccourcis
+
+- `tab` : appuyer sur tab pour compléter le mot qu'on est en train d'écrire
+
+### 2. Commandes
+
+- `cd` : se déplacer vers un dossier : `cd MonDossier` ou `cd Mondossier/sous-dossier/sous-sous-dossier`
+  `cd .. = remonter dans dossier parent`
+- `ls` : lister les éléments dans le dossier où on se trouve
+- `git init` : créer un repository (ou dépot) git dans le dossier où on se trouve
+
+### 3. Commandes Git
+
+- `git status` : Montre les fichiers qui ont été modifiés mais pas encore sauvegardés.
+- `git diff` ou `git diff mon_fichier` : Affiche les changements faits par rapport à la dernière sauvegarde, pour tous les fichiers ou un fichier spécifique.
+- `git log` : voir les commits réalisés
+- `git add mon_fichier` : ajouter des fichiers à sauvegarder
+- `git commit -m "J'ai fait telle chose` : nommer une nouvelle sauvegarde
+- `git push` : envoyer les sauvegardes vers GitHub
+- `git remote -v` : voir les connexions entre notre dossier local (dans l'ordi) et les éléments en ligne (connexion au repository GitHub, ou autres)
