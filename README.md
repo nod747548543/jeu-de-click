@@ -33,7 +33,7 @@ Lancez `index.html` et voilà !
 
 > Comment le projet a été créé ?
 
-1. Aller ou on veut pour créer un projet dans un endroit rangé.  
+1. Aller où on veut pour créer un projet dans un endroit rangé.  
    Ex:
 
 ```bash
@@ -57,7 +57,7 @@ Créer un fichier `index.html`, `style.css`, `script.js`. Ils vont chacun avoir 
 - `style.css` : le styling
 - `script.js` : la détection de clic sur un bouton, et l'affichage du nombre de clics dans l'élément de score
 
-Copiez-collez le contenu de mes fichiers dans vos fichiers, pour avoir une base.
+Recopiez le contenu de mes fichiers dans vos fichiers, pour avoir une base.
 
 #### 3. Fonctionnalités de base
 
@@ -68,32 +68,34 @@ Copiez-collez le contenu de mes fichiers dans vos fichiers, pour avoir une base.
 
 Conteneuriser le projet dans un Docker :
 
-- créer un Dockerfile
-- trouver comment faire pour envelopper le projet dans un Dockerfile, et le lancer depuis docker.
-  - Faire une simple recherche internet, ex: `html css docker`.  
-    On se rend compte que la plupart des personnes recommandent nginx qui est super simple et adapté au lancement de sites statiques.
-  - Solution : il y a toujours plein de solutions possibles.
-    Moi j'ai appliqué [cette réponse](https://thriveread.com/run-html-with-docker-and-nginx/).
-    D'autres ressources d'internet sur comment faire ça facilement disent à peu près la même chose : [omkara18 de dev.to](https://dev.to/omkara18/deploying-a-static-website-with-docker-a-comprehensive-guide-3gk), [Zulfikar sur medium](https://medium.com/@zul.m/deploying-a-static-html-site-with-docker-and-nginx-6f5bcdcbc650)
-- maintenant, faire une commande comme `docker run -d -p 8080:80 clickfast` devrait lancer le projet conteneurisé !
+1. Créer un Dockerfile
+2. Trouver comment faire pour envelopper le projet dans un Dockerfile, et le lancer depuis docker.
+
+   - Faire une simple recherche internet, ex: `html css docker`.  
+     On se rend compte que la plupart des personnes recommandent nginx qui est super simple et adapté au lancement de sites statiques.
+   - Solution : il y a toujours plein de solutions possibles.
+     Moi j'ai appliqué [cette réponse](https://thriveread.com/run-html-with-docker-and-nginx/).
+     D'autres ressources d'internet sur comment faire ça facilement disent à peu près la même chose : [omkara18 de dev.to](https://dev.to/omkara18/deploying-a-static-website-with-docker-a-comprehensive-guide-3gk), [Zulfikar sur medium](https://medium.com/@zul.m/deploying-a-static-html-site-with-docker-and-nginx-6f5bcdcbc650)
+
+3. Maintenant, faire une commande comme `docker run -d -p 8080:80 clickfast` devrait lancer le projet conteneurisé !
 
 ### Exercice III - CI/CD
 
 Implémentons le CI/CD !
 
-- Mettre le projet en ligne (gratuitement grâce à github.io)
-- Configurer les Workflows
+1. Mettre le projet en ligne (gratuitement grâce à github.io)
+2. Configurer les Workflows
 
 ### Exercice IV - Tests automatisés
 
 C'est bien beau notre CI/CD, mais c'est encore mieux lorsqu'il se charge tout seul de lancer nos tests 😎
 
-- Écrivons des Tests unitaires, pour vérifier que quand X se passe, Y résultat se produit
-- Inscrivons une règle pour que notre test soit bien lancé quand on veut push notre modification
-- Bonus : Tests d'intégration
-  Alors là on est des boss, on va faire du code qui vérifie que notre front fonctionne bien.  
-  En utilisant Playwright, on va vérifier que quand on clique sur [...], on a bien [... qui réagit].  
-  Maintenant, faire que notre CI CD lance bien ces tests également
+1. Écrivons des Tests unitaires, pour vérifier que quand X se passe, Y résultat se produit
+2. Inscrivons une règle pour que notre test soit bien lancé quand on veut push notre modification
+3. Bonus : Tests d'intégration
+   Alors là on est des boss, on va faire du code qui vérifie que notre front fonctionne bien.  
+   En utilisant Playwright, on va vérifier que quand on clique sur [...], on a bien [... qui réagit].  
+   Maintenant, faire que notre CI CD lance bien ces tests également
 
 ### Exercice V - Connecter notre projet à une API
 
