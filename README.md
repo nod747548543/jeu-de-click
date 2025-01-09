@@ -1,3 +1,5 @@
+OUAIS 
+
 # ClickFast ⏩
 
 Sois le plus rapide des clickers du game ⚡
