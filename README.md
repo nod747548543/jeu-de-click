@@ -259,3 +259,4 @@ deleteUserByUsername(usernameToDelete);
 - `git remote -v` : voir les connexions entre notre dossier local (dans l'ordi) et les éléments en ligne (connexion au repository GitHub, ou autres)
 # jeu-de-click
 # nod.github.io
+# jeu-de-click
